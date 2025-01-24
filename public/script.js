@@ -1,5 +1,5 @@
 const apiKey = "127e814c921d448ebb7164527252301"; // Replace with your API key
-const locationName = "nasik"; // Default location
+const locationName = "wakad"; // Default location
 
 const dateElement = document.getElementById("date");
 const timeElement = document.getElementById("time");
@@ -8,6 +8,10 @@ const conditionElement = document.getElementById("condition");
 const temperatureElement = document.getElementById("temp");
 const hourlyForecastContainer = document.getElementById("hourly-forecast");
 const weeklyForecastContainer = document.getElementById("weekly-forecast");
+
+// Get elements for user input
+const userLocationInput = document.getElementById("user-location");
+const getWeatherButton = document.getElementById("get-weather-btn");
 
 // Fetch weather data from API
 async function fetchWeather(location) {
@@ -89,6 +93,16 @@ function getWeatherIcon(condition) {
     return "smog";
   return "question"; // Default icon if no match
 }
+
+// Add event listener to button
+getWeatherButton.addEventListener("click", () => {
+  const location = userLocationInput.value.trim();
+  if (location) {
+    fetchWeather(location);
+  } else {
+    alert("Please enter a location name.");
+  }
+});
 
 // Fetch default location weather on page load
 fetchWeather(locationName);
