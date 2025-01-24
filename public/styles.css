@@ -87,3 +87,59 @@ body {
   font-size: 1.5rem;
   margin: 5px 0;
 }
+
+/* Styling for input box and button */
+.location-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  /* display: block; */
+}
+#button {
+  display: flex;
+  justify-content: center;
+}
+
+#user-location {
+  width: 300px;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 2px solid #6c63ff; /* Primary color */
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.3s ease;
+  background-color: #f9f9f9; /* Light background */
+  color: #333; /* Text color */
+}
+
+#user-location:focus {
+  border-color: #4a47a3; /* Focus color */
+  box-shadow: 0 0 8px rgba(76, 81, 191, 0.3); /* Light focus glow */
+}
+
+#get-weather-btn {
+  display: block;
+  margin-left: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #6c63ff; /* Primary color */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(108, 99, 255, 0.3); /* Button shadow */
+}
+
+#get-weather-btn:hover {
+  background-color: #4a47a3; /* Hover color */
+  box-shadow: 0 6px 12px rgba(76, 81, 191, 0.5); /* Stronger shadow */
+}
+
+#get-weather-btn:active {
+  background-color: #372f96; /* Active color */
+  box-shadow: 0 2px 6px rgba(55, 47, 150, 0.5); /* Pressed shadow */
+  transform: scale(0.98); /* Button press effect */
+}
