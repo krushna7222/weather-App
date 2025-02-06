@@ -20,13 +20,15 @@ const Weather = () => {
       .then((response) => response.json())
       .then((response) => {
         console.log(response.current);
-        setWeatherData({
-          location: response.location.name,
-          region: response.location.region,
-          country: response.location.country,
-          temp: response.current.temp_c,
-          faranhite: response.current.temp_f,
-        });
+        if (data.location.country == "India") {
+          setWeatherData({
+            location: response.location.name,
+            region: response.location.region,
+            country: response.location.country,
+            temp: response.current.temp_c,
+            faranhite: response.current.temp_f,
+          });
+        }
       });
   }, [location]);
   return (
