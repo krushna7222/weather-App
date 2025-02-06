@@ -27,7 +27,7 @@ const Weather = () => {
           faranhite: response.current.temp_f,
         });
       });
-  }, []);
+  }, [location]);
   return (
     <div className="weather">
       <div className="head">
@@ -37,6 +37,20 @@ const Weather = () => {
         <h2>{weatherData.location}, </h2>
         <h4>{weatherData.region}</h4>
         <h4>{weatherData.country}</h4>
+      </div>
+      <div className="search">
+        <div>
+          <input
+            type="text"
+            className="location-input"
+            placeholder="Enter Your Location"
+            spellCheck="false"
+            onChange={(e) => setLocation(e.target.value)}
+          />
+        </div>
+        {/* <div>
+          <button className="search-btn">Search</button>
+        </div> */}
       </div>
 
       <div className="temp">
