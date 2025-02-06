@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "./Weather.css";
 
 const Weather = () => {
+  //   let apiKey = import.meta.env.VITE_API_KEY;
   let apiKey = "127e814c921d448ebb7164527252301";
   const [location, setLocation] = useState("Wakad");
   const [weatherData, setWeatherData] = useState({
@@ -14,7 +15,7 @@ const Weather = () => {
 
   useEffect(() => {
     fetch(
-      `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${location}&days=7&aqi=no&alerts=no`
+      `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${location}&days=7&aqi=no&alerts=no`
     )
       .then((response) => response.json())
       .then((response) => {
