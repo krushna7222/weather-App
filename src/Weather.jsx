@@ -20,7 +20,7 @@ const Weather = () => {
       .then((response) => response.json())
       .then((response) => {
         console.log(response.location);
-        if (response.location.country == "India") {
+        if (response.location.country === "India") {
           setWeatherData({
             location: response.location.name,
             region: response.location.region,
